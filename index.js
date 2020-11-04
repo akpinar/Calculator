@@ -9,19 +9,41 @@ let btn8 = document.getElementById("btn8");
 let btn9 = document.getElementById("btn9");
 let btn0 = document.getElementById("btn0");
 let btnStar = document.getElementById("btnStar");
+let btnEquals = document.getElementById("btnEquals");
 let result = document.getElementById("result");
+let i = 1;
+let value1 =0;
+let value2 = 0;
 
 function calculate()
-{
-    
-    if(btnStar.click){
-        result.value=" "
+{   
+
+    if(i%2==1){
+         value1 = result.value;
+         result.value ="";
     }
 
+    else{
+        value2 = result.value;
+    }
+    i++;
+    setValues(value1,value2);
 
-  
-    
+   
 }
+function setValues(a,b){
+    a= parseInt(value1);
+    b=parseInt(value2);
+
+    console.log(a,b);
+
+    if(btnEquals.click){
+        calculateStar(a,b);
+        
+    }
+  
+}
+
 function numberBtnClick(value)
 {
 
@@ -92,25 +114,16 @@ function clearInput(){
 
 }
 
-function calculateStar(value1,value2){
-    let valueA = result.value;
-    let valueB = valueA;
-
-    let valueC = result.value;
-    
-    console.log(valueB);
-    console.log(valueC);
-
-
-
-   
-}
-
-function calculateSquare(value1,value2){
+function calculateStar(d,c){
+    // let toplam = d+c;
+    // return toplam;
+    let d2 = 2*d;
+    let cd = c*d;
+    let toplam = d2+cd;
+    console.log(toplam);
 
 }
 
-function calculateTriangle(value1,value2){
-    
-}
+
+
 
