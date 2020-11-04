@@ -10,57 +10,58 @@
             border-width: 5px;
             border-color: #80d4ff;
             height: auto;
-            width: 500px;
+            width: 450px;
             background-color:#cceeff ;
         }
+
         button{
             border-radius: 50px;
             width: 100px;
             height: 80px;
             background-color: #0088cc;
-
-          
-
+            color: #ffffff;
+            font-size: 20px;
         }
+
         #result{
             border-radius: 50px;
             height: 60px;
             width: 400px;
+            background-color: aliceblue;
         }
     </style>
 </head>
 <body>
 
     <div id="form">
-        <input name="result" value="" id="result">
-        <!-- <p id="deneme"></p> -->
+        <input name="result" value="dg" id="result" disabled>
+
         <div >
             <button id="btn1" value="1" onclick="numberBtnClick(1)" >1</button>
             <button id="btn2" value="2" onclick="numberBtnClick(2)" >2</button>
             <button id="btn3" value="3" onclick="numberBtnClick(3)" >3</button>
-            <button type="button" id="btnStar">*</button>
+            <button type="button" id="btnStar" onclick="calculateStar()">★</button>
         </div>
         <div >
             <button id="btn4" value="4" onclick="numberBtnClick(4)" >4</button>
             <button id="btn5" value="5" onclick="numberBtnClick(5)" >5</button>
             <button id="btn6" value="6" onclick="numberBtnClick(6)" >6</button>
-            <button type="button" id="btnSquare">kare</button>
+            <button type="button" id="btnSquare">□</button>
             
         </div>
         <div >
             <button id="btn7" value="7" onclick="numberBtnClick(7)" >7</button>
             <button id="btn8" value="8" onclick="numberBtnClick(8)" >8</button>
             <button id="btn9" value="9" onclick="numberBtnClick(9)" >9</button>
-            <button type="button" id="btnTriangle">üçgen</button>
+            <button type="button" id="btnTriangle">Δ</button>
             
         </div>
         <div >
-            <button type="button" value="" id="btnClear">C</button>
+            <button type="button" value=" " id="btnClear" onclick="clearInput()">C</button>
             <button id="btn0" value="0" onclick="numberBtnClick(0)">0</button>
-            <button type="button" id="btnComma">,</button>
+            <button id="btnComma" value ="','" onclick="">,</button>
             <button type="button" id="btnEquals">=</button>
         </div>
-
 
     </div>
 
