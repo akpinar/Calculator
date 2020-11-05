@@ -145,7 +145,7 @@ function calculateSquare(a,b){
 }
 
 function calculateTriangle(a,b){
-    
+    console.log("merhaba");
 }
 
 
