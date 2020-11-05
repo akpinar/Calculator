@@ -8,6 +8,7 @@ let btn7 = document.getElementById("btn7");
 let btn8 = document.getElementById("btn8");
 let btn9 = document.getElementById("btn9");
 let btn0 = document.getElementById("btn0");
+let btnDot = document.getElementById("btnDot");
 let btnEquals = document.getElementById("btnEquals");
 let result = document.getElementById("result");
 let i = 1;
@@ -18,6 +19,7 @@ let b = 0;
 let operation;
 let total = 0;
 let factorial=1;
+let dot;
 
 
 
@@ -45,6 +47,7 @@ function calculate(a,b,operation)
 
 function numberBtnClick(value)
 {
+
 
     if(value === 1)
     {
@@ -96,13 +99,9 @@ function numberBtnClick(value)
         result.value += btn0.value;
     }
 
-    
-    // let comma = ",";
-    // if(value === comma){
-    //     let btnComma = document.getElementById("btnComma").value;
-    //     document.getElementById("result").value = btnComma;
-
-    // }
+    if(value === dot){
+        result.value+=btnDot.value;
+    }
 
 }
 
@@ -117,7 +116,10 @@ function clearInput(){
 function setValue1(oper){
     operation = oper;
     value1 = result.value;
-    a = parseInt(value1);
+    a = parseFloat(value1);
+    if(a >= 999999999){
+        alert("Maximum sayı basamağına ulaştınız");
+    }
     clearInput();
     
 
@@ -125,8 +127,11 @@ function setValue1(oper){
 
 function setValue2(){
     value2 = result.value;
-    b = parseInt(value2);
-
+    b = result.value;
+    b = parseFloat(value2);
+    if(b >= 999999999){
+        alert("Maximum sayı basamağına ulaştınız");
+    }
     calculate(a,b,operation);
 
    
@@ -134,7 +139,7 @@ function setValue2(){
 }
 function calculateStar(a,b){
     total = (2 * a) + (a * b);
-    result.value = total;
+    result.value = total
     console.log(total);
     
     
