@@ -17,6 +17,7 @@ let a = 0;
 let b = 0;
 let operation;
 let total = 0;
+let factorial=1;
 
 
 
@@ -133,6 +134,7 @@ function setValue2(){
 }
 function calculateStar(a,b){
     total = (2 * a) + (a * b);
+    result.value = total;
     console.log(total);
     
     
@@ -140,12 +142,22 @@ function calculateStar(a,b){
 
 function calculateSquare(a,b){
     total = (2 * a) - (a * b);
+    result.value = total;
     console.log(total);
     
 }
 
 function calculateTriangle(a,b){
-    console.log("merhaba");
+    total = Math.pow(a,b) + Math.pow(b,a);
+    
+    for(let i = 1;i<total;i++){
+        factorial = total*i;
+    }
+    
+    result.value = factorial;
+
+    
+    console.log(factorial);
 }
 
 
