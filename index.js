@@ -8,40 +8,38 @@ let btn7 = document.getElementById("btn7");
 let btn8 = document.getElementById("btn8");
 let btn9 = document.getElementById("btn9");
 let btn0 = document.getElementById("btn0");
-let btnStar = document.getElementById("btnStar");
 let btnEquals = document.getElementById("btnEquals");
 let result = document.getElementById("result");
 let i = 1;
 let value1 =0;
 let value2 = 0;
+let a = 0;
+let b = 0;
+let operation;
+let total = 0;
 
-function calculate()
+
+
+function calculate(a,b,operation)
 {   
-
-    if(i%2==1){
-         value1 = result.value;
-         result.value ="";
+    switch(operation){
+        case 'star':
+            console.log(a,b,operation);
+            calculateStar(a,b);
+            break;
+        case 'square':
+            console.log(a,b,operation);
+            calculateSquare(a,b);
+            break;
+        case 'triangle':
+            console.log(a,b,operation);
+            calculateTriangle(a,b);
+            break;
+        default:
+            break;
+            
     }
 
-    else{
-        value2 = result.value;
-    }
-    i++;
-    setValues(value1,value2);
-
-   
-}
-function setValues(a,b){
-    a= parseInt(value1);
-    b=parseInt(value2);
-
-    console.log(a,b);
-
-    if(btnEquals.click){
-        calculateStar(a,b);
-        
-    }
-  
 }
 
 function numberBtnClick(value)
@@ -114,14 +112,40 @@ function clearInput(){
 
 }
 
-function calculateStar(d,c){
-    // let toplam = d+c;
-    // return toplam;
-    let d2 = 2*d;
-    let cd = c*d;
-    let toplam = d2+cd;
-    console.log(toplam);
 
+function setValue1(oper){
+    operation = oper;
+    value1 = result.value;
+    a = parseInt(value1);
+    clearInput();
+    
+
+}
+
+function setValue2(){
+    value2 = result.value;
+    b = parseInt(value2);
+
+    calculate(a,b,operation);
+
+   
+
+}
+function calculateStar(a,b){
+    total = (2 * a) + (a * b);
+    console.log(total);
+    
+    
+}
+
+function calculateSquare(a,b){
+    total = (2 * a) - (a * b);
+    console.log(total);
+    
+}
+
+function calculateTriangle(a,b){
+    
 }
 
 
